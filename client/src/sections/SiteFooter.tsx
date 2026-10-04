@@ -8,11 +8,10 @@ export function SiteFooter() {
       <footer className="site-footer" id="contact">
         <div>
           <p className="eyebrow">[ Start a conversation ]</p>
-          <a className="email-link" href="mailto:hello@mdrmx.studio">
-            hello@mdrmx.studio
+          <a className="email-link" href="mailto:stuart.mdrmx@gmail.com">
+            stuart.mdrmx@gmail.com
           </a>
         </div>
-        <p>© 2026 MDRMX Studio</p>
       </footer>
     </>
   );
