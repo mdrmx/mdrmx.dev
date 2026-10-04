@@ -1,0 +1,51 @@
+/* Uses the --ink, --panel and --accent tokens from the host app. */
+.gallery-detail {
+  display: flex;
+  height: 100%;
+  min-height: 100%;
+  flex-direction: column;
+  background: var(--panel);
+  color: var(--ink);
+}
+.gallery-detail__bar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 16px;
+  border-bottom: 2px solid var(--ink);
+}
+.gallery-detail__bar h2 {
+  margin: 0;
+}
+.gallery-detail__back {
+  padding: 8px 12px;
+  border: 2px solid var(--ink);
+  background: var(--accent);
+  color: var(--ink);
+  cursor: pointer;
+  font: inherit;
+}
+.gallery-detail__back:hover,
+.gallery-detail__back:focus-visible {
+  background: var(--focus);
+}
+.gallery-detail__content {
+  position: relative;
+  min-height: 0;
+  flex: 1;
+}
+.gallery-detail__info {
+  display: grid;
+  max-width: 720px;
+  gap: 16px;
+  padding: 24px;
+}
+.gallery-detail__info img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+.gallery-detail__info p {
+  margin: 0;
+  line-height: 1.6;
+}
