@@ -382,6 +382,7 @@ h2 {
 .email-link {
   display: inline-block;
   margin-top: 7px;
+  font-size: 1.38rem;
 }
 @media (max-width: 760px) {
   .site-shell {
