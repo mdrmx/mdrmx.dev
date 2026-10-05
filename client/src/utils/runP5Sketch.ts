@@ -37,6 +37,9 @@ export function runP5Sketch(factory: P5SketchFactory, host: HTMLElement) {
       p.setup = () => {
         if (disposed) {
           p.noLoop();
+          // remove() ran before p5 created its default canvas, so it skipped DOM cleanup
+          // and that canvas would stay in the host (StrictMode's mount/unmount/mount).
+          void p.remove();
           return;
         }
         return userSetup.call(p);
