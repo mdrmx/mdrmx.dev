@@ -14,7 +14,7 @@ export type ProjectPhase =
 // Animation timing lives here: durations in seconds, handoff in milliseconds.
 const TIMING = {
   layoutDuration: 0.9,
-  sequenceDuration: 0.85,
+  sequenceDuration: 0.7,
   handoffMs: 950,
 };
 const LAYOUT_EASE = [0.22, 1, 0.36, 1] as const;

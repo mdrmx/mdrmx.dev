@@ -41,15 +41,15 @@ function Reveal({
     direction === "left"
       ? {
           type: "spring" as const,
-          stiffness: 30,
+          stiffness: 15,
           damping: 10,
           mass: 2,
           delay,
         }
       : {
           type: "spring" as const,
-          stiffness: 135,
-          damping: 50,
+          stiffness: 45,
+          damping: 30,
           mass: 0.2,
           delay,
         };
