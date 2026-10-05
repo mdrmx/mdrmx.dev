@@ -1,5 +1,6 @@
 import { motion, useReducedMotion } from "motion/react";
 import { useEffect, useState, type ReactNode } from "react";
+import { AdaptiveImage } from "./AdaptiveImage";
 import { TileGrid, type TileItem } from "./TileGrid";
 import "./ProjectGallery.css";
 
@@ -58,7 +59,11 @@ function ProjectDetail({ project, layoutId, onBack }: ProjectDetailProps) {
         ) : (
           <div className="gallery-detail__info">
             {project.image && (
-              <img src={project.image} alt={project.imageAlt ?? ""} />
+              <AdaptiveImage
+                wide={project.image}
+                square={project.imageSquare}
+                alt={project.imageAlt}
+              />
             )}
             {project.description && <p>{project.description}</p>}
           </div>

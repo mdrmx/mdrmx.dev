@@ -6,7 +6,9 @@ import {
 import type { ProjectSequence } from "../hooks/useProjectSequence";
 import { ParticleSpace } from "../sketches/particle-space/ParticleSpace";
 import particle from "../assets/particle.png";
-
+import trails from "../assets/trails.png";
+import trailsSquare from "../assets/trails-square.png";
+import letters from "../assets/matter-letters.jpg";
 const SERIES: GalleryProject[] = [
   {
     id: "particle-field",
@@ -17,15 +19,19 @@ const SERIES: GalleryProject[] = [
   },
   {
     id: "typography-series",
-    title: "Typography Series",
-    image: particle,
-    description: "A generative particle system with interactive forces.",
+    title: "Snake Trails",
+    image: trails,
+    imageSquare: trailsSquare,
+    description:
+      "A grid of generative elements that are self-avoiding and leave trails.",
   },
   {
-    id: "3d-xr",
-    title: "3D/XR",
-    image: particle,
-    description: "A generative particle system with interactive forces.",
+    id: "matter-letters",
+    title: "Matter Physics Typography",
+    image: letters,
+    imageSquare: letters,
+    description:
+      "A generative typography experiment using the Matter physics engine.",
   },
   {
     id: "project-4",

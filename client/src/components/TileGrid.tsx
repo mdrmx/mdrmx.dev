@@ -1,11 +1,14 @@
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
 import { motion } from "motion/react";
+import { AdaptiveImage } from "./AdaptiveImage";
 
 export type TileItem = {
   id: string;
   title: string;
   image?: string;
+  /** Shown instead of `image` when the image box is closer to square than wide. */
+  imageSquare?: string;
   /** Empty by default, since the title usually describes the image. */
   imageAlt?: string;
   description?: string;
@@ -48,12 +51,7 @@ export function TileGrid({ items, onSelect, layoutIdPrefix }: TileGridProps) {
           cursor: "pointer",
           "& .tile-title": { fontSize: "1.25rem", lineHeight: 1.2 },
           "& .tile-description": { fontSize: "0.8rem", lineHeight: 1.5 },
-          "& img": {
-            display: "block",
-            width: "100%",
-            maxHeight: 220,
-            objectFit: "cover",
-          },
+          "& .adaptive-image": { height: 220 },
           transition:
             "transform 180ms ease, background-color 180ms ease, box-shadow 220ms ease",
           "&:hover, &:focus-visible": {
@@ -65,26 +63,34 @@ export function TileGrid({ items, onSelect, layoutIdPrefix }: TileGridProps) {
         },
       }}
     >
-      {items.map(({ id, title, image, imageAlt = "", description }) => (
-        <Grid key={id} size={1}>
-          <motion.div
-            layoutId={`${layoutIdPrefix}-${id}`}
-            style={{ height: "100%" }}
-          >
-            <Paper
-              component="button"
-              type="button"
-              onClick={() => onSelect(id)}
+      {items.map(
+        ({ id, title, image, imageSquare, imageAlt = "", description }) => (
+          <Grid key={id} size={1}>
+            <motion.div
+              layoutId={`${layoutIdPrefix}-${id}`}
+              style={{ height: "100%" }}
             >
-              {image && <img src={image} alt={imageAlt} />}
-              <span className="tile-title">{title}</span>
-              {description && (
-                <span className="tile-description">{description}</span>
-              )}
-            </Paper>
-          </motion.div>
-        </Grid>
-      ))}
+              <Paper
+                component="button"
+                type="button"
+                onClick={() => onSelect(id)}
+              >
+                {image && (
+                  <AdaptiveImage
+                    wide={image}
+                    square={imageSquare}
+                    alt={imageAlt}
+                  />
+                )}
+                <span className="tile-title">{title}</span>
+                {description && (
+                  <span className="tile-description">{description}</span>
+                )}
+              </Paper>
+            </motion.div>
+          </Grid>
+        ),
+      )}
     </Grid>
   );
 }

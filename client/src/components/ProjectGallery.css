@@ -35,15 +35,15 @@
   flex: 1;
 }
 .gallery-detail__info {
-  display: grid;
-  max-width: 720px;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
   gap: 16px;
   padding: 24px;
 }
-.gallery-detail__info img {
-  display: block;
-  width: 100%;
-  object-fit: cover;
+.gallery-detail__info .adaptive-image {
+  min-height: 240px;
+  flex: 1;
 }
 .gallery-detail__info p {
   margin: 0;
