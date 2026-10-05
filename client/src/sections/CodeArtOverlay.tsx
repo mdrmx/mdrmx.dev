@@ -5,6 +5,7 @@ import {
 } from "../components/ProjectGallery";
 import type { ProjectSequence } from "../hooks/useProjectSequence";
 import { ParticleSpace } from "../sketches/particle-space/ParticleSpace";
+import { SnakeTrails } from "../sketches/snake-trails/SnakeTrails";
 import particle from "../assets/particle.png";
 import trails from "../assets/trails.png";
 import trailsSquare from "../assets/trails-square.png";
@@ -24,6 +25,7 @@ const SERIES: GalleryProject[] = [
     imageSquare: trailsSquare,
     description:
       "A grid of generative elements that are self-avoiding and leave trails.",
+    content: <SnakeTrails />,
   },
   {
     id: "matter-letters",
