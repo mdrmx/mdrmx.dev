@@ -186,3 +186,35 @@ canvas {
   border-radius: 4px;
   cursor: pointer;
 }
+
+canvas {
+  touch-action: none;
+}
+
+/* Compact layout: no original-model window, and a small settings pill that
+   expands into a panel kept inside the viewport. */
+@media (max-width: 760px) {
+  #model-preview {
+    display: none;
+  }
+  #settings-panel {
+    top: 8px;
+    right: 8px;
+    width: min(280px, calc(100vw - 16px));
+    max-height: 60vh;
+  }
+  #settings-panel.collapsed {
+    width: auto;
+    background: rgba(30, 30, 30, 0.7);
+  }
+  #settings-panel .panel-header {
+    padding: 8px 12px;
+  }
+  #settings-panel .panel-row input,
+  #settings-panel .panel-row select {
+    font-size: 16px; /* stops iOS zooming the page on focus */
+  }
+  .loading-overlay {
+    max-width: calc(100vw - 32px);
+  }
+}

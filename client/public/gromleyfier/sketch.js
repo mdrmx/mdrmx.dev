@@ -259,6 +259,11 @@ function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
 }
 
+// Matches the compact-layout breakpoint in style.css.
+function isCompactScreen() {
+  return window.matchMedia("(max-width: 760px)").matches;
+}
+
 // ---- Settings panel ----
 
 // Builds the fixed settings panel (styled in style.css) from SETTINGS.
@@ -274,8 +279,10 @@ function buildPanel() {
   const body = document.createElement("div");
   body.className = "panel-body";
   panel.appendChild(body);
-  // Clicking the header collapses / expands the panel.
+  // Clicking the header collapses / expands the panel. On small screens it
+  // starts collapsed so the model is what the viewer sees first.
   header.addEventListener("click", () => panel.classList.toggle("collapsed"));
+  if (isCompactScreen()) panel.classList.add("collapsed");
 
   buildPresetControls(body);
 
@@ -332,7 +339,11 @@ function buildPanel() {
 
   renderButton = document.createElement("button");
   renderButton.textContent = "Render";
-  renderButton.addEventListener("click", render);
+  renderButton.addEventListener("click", () => {
+    // Get the panel out of the way so the render is visible on small screens.
+    if (isCompactScreen()) renderButton.closest("#settings-panel").classList.add("collapsed");
+    render();
+  });
   statusEl = document.createElement("div");
   statusEl.className = "panel-status";
   body.append(renderButton, statusEl);
