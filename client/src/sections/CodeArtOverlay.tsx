@@ -10,7 +10,7 @@ import { Gromleyfier } from "../sketches/gromleyfier/Gromleyfier";
 import particle from "../assets/particle.png";
 import trails from "../assets/trails.png";
 import trailsSquare from "../assets/trails-square.png";
-import letters from "../assets/matter-letters.jpg";
+// import letters from "../assets/matter-letters.jpg";
 import gromleyfier from "../assets/gromleyfier.png";
 const SERIES: GalleryProject[] = [
   {
