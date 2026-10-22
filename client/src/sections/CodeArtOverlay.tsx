@@ -6,7 +6,7 @@ import {
 import type { ProjectSequence } from "../hooks/useProjectSequence";
 import { ParticleSpace } from "../sketches/particle-space/ParticleSpace";
 import { SnakeTrails } from "../sketches/snake-trails/SnakeTrails";
-import { Gromleyfier } from "../sketches/gromleyfier/Gromleyfier";
+import { Gormleyfier } from "../sketches/gormleyfier/Gormleyfier";
 import particle from "../assets/particle.png";
 import trails from "../assets/trails.png";
 import trailsSquare from "../assets/trails-square.png";
@@ -14,12 +14,12 @@ import trailsSquare from "../assets/trails-square.png";
 import gromleyfier from "../assets/gromleyfier.png";
 const SERIES: GalleryProject[] = [
   {
-    id: "gromleyfier",
-    title: "Gromleyfier",
+    id: "gormleyfier",
+    title: "Gormleyfier",
     image: gromleyfier,
     description:
       "A tool for gormleyfying 3D models, inspired by Antony Gormley's Quantum Cloud (1999).",
-    content: <Gromleyfier />,
+    content: <Gormleyfier />,
   },
   {
     id: "particle-field",
