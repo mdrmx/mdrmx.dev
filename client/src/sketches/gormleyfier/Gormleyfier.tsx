@@ -1,4 +1,4 @@
-import "./Gromleyfier.css";
+import "./Gormleyfier.css";
 
 export function Gormleyfier() {
   return (
